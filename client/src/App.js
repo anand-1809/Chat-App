@@ -67,7 +67,7 @@ function App() {
     };
 
     await socket.emit("send_message", messageContent);
-    setMessageList([...messageList, messageContent.content]);
+    setMessageList((prevMessageList) => [...prevMessageList, messageContent.content]);
     setMessage("");
     setMedia(null); // Clear the media after sending
   };
